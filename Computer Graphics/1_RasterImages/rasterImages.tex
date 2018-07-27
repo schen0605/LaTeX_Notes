@@ -1,28 +1,77 @@
 
 \section{Raster Images}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Introduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{itemize}
   \item Images can be presented on \textbf{raster displays} which show images as arrays of \textbf{pixels}. For example, computer screens and TV's.
-  \item A raster image is a 2D array which stores the \textbf{pixel value} for each pixel.
-  \item A raster image is \textbf{device-independent}.
-  \item A vector image is described without any reference to any particular pixel grid.
-  \item Vector images are \textbf{resolution independent} but must be \textbf{rasterised}.
+  \item A raster image is a 2D array which stores the \textbf{pixel value} for each pixel
+  \item A raster image is \textbf{device-independent}
+  \item A vector image is described without any reference to any particular pixel grid
+  \item Vector images are \textbf{resolution independent} but must be \textbf{rasterised}
 \end{itemize}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Pixels}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{itemize}
   \item We can abstract an image as a function:
-    \begin{equation*} \label{eu_eqn}
+    \begin{equation*}
       I(x,y) : R \rightarrow V
     \end{equation*}
         where $R \subset \mathbb{R}^{2}$ and $V$ is the set of possible pixel values.
-  \item For example, a RGB colour image has $V = (\mathbb{R}^{+})^{3}$.
+  \item For example, a RGB colour image has $V = (\mathbb{R}^{+})^{3}$
   \item In these notes, the bottom-left pixel is $(0,0)$ and the top-right pixel is $(n_{x} - 1, n_{y} - 1)$ given $n_{x}$ columns and $n_{y}$ rows.
   \item The rectangular domain of a $n_{x} \times n_{y}$ image is
-  \begin{equation*} \label{eu_eqn}
+  \begin{equation*}
     R = [-0.5, n_{x} - 0.5] \times [-0.5, n_{y} - 0.5]
   \end{equation*}
+  \item Example pixel formats:
+    \begin{itemize}
+      \item 8-bit RGB fixed-colour range: photographs and web/email \\ applications
+      \item 16-bit fixed-range grayscale: medical imaging
+      \item 16-bit fixed-range RGB: professional photography and printing
+    \end{itemize}
+\end{itemize}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Intensity}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+  \item Assume a numerical descrition of pixel colour from 0 to 1
+  \item Monitors are non-linear with respect to input and therefore \\ characterised by a $\gamma$ value:
+    \begin{equation*}
+      I = I_{max}(a)^{\gamma}
+    \end{equation*}
+      where $0 \leq a \leq 1$.
+  \item We can find $\gamma$ by finding the value of $a$ that gives an intensity halfway between black and white so $a^{\gamma} = 0.5$
+  \item Usually:
+    \begin{gather*}
+        a = \left\{ 0 \:, \: \frac{1}{255} \:,\: \ldots \:, \: \frac{254}{255} \:, \: 1 \right\} \\[2ex]
+        \vspace{10pt}
+        \implies I = \left\{ 0 \:, \: I_{max}\left(\frac{1}{255}\right)^{\gamma} \:,\: \ldots \:, \: I_{max}\left(\frac{254}{255}\right)^{\gamma} \:, \: I_{max} \right\}
+    \end{gather*}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{RGB}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+  \item RGB colour can be represented as a RGB colour cube. Coordinates of colours are:
+    \begin{itemize}
+      \item black = (0, 0, 0)
+      \item red = (1, 0, 0)
+      \item green = (0, 1, 0)
+      \item blue = (0, 0, 1)
+      \item yellow = (1, 1, 0)
+      \item magenta = (1, 0, 1)
+      \item cyan = (0, 1, 1)
+      \item white = (1, 1, 1)
+    \end{itemize}
 \end{itemize}
