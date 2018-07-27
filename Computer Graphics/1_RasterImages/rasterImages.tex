@@ -74,4 +74,18 @@
       \item cyan = (0, 1, 1)
       \item white = (1, 1, 1)
     \end{itemize}
+  \item Gamma correction issues apply to each RGB component separately
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Compositing}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+  \item The \textbf{pixel coverage} (denoted $\alpha$) is the fraction of the pixel covered by the foreground layer.
+  \item For a composite with foreground colour $\textbf{c}_{f}$ over a blackground colour $\textbf{c}_{b}$:
+  \begin{align*}
+    \textbf{c} = \alpha \textbf{c}_{f} + (1 - \alpha)\textbf{c}_{background}
+  \end{align*}
+  \item The $\alpha$ values can be stored in a separate greyscale image known as a \textbf{alpha mask} or \textbf{transparency mask}
 \end{itemize}
