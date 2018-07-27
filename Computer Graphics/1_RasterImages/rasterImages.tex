@@ -1,0 +1,28 @@
+
+\section{Raster Images}
+
+\subsection{Introduction}
+
+\begin{itemize}
+  \item Images can be presented on \textbf{raster displays} which show images as arrays of \textbf{pixels}. For example, computer screens and TV's.
+  \item A raster image is a 2D array which stores the \textbf{pixel value} for each pixel.
+  \item A raster image is \textbf{device-independent}.
+  \item A vector image is described without any reference to any particular pixel grid.
+  \item Vector images are \textbf{resolution independent} but must be \textbf{rasterised}.
+\end{itemize}
+
+\subsection{Pixels}
+
+\begin{itemize}
+  \item We can abstract an image as a function:
+    \begin{equation*} \label{eu_eqn}
+      I(x,y) : R \rightarrow V
+    \end{equation*}
+        where $R \subset \mathbb{R}^{2}$ and $V$ is the set of possible pixel values.
+  \item For example, a RGB colour image has $V = (\mathbb{R}^{+})^{3}$.
+  \item In these notes, the bottom-left pixel is $(0,0)$ and the top-right pixel is $(n_{x} - 1, n_{y} - 1)$ given $n_{x}$ columns and $n_{y}$ rows.
+  \item The rectangular domain of a $n_{x} \times n_{y}$ image is
+  \begin{equation*} \label{eu_eqn}
+    R = [-0.5, n_{x} - 0.5] \times [-0.5, n_{y} - 0.5]
+  \end{equation*}
+\end{itemize}
